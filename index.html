@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Microservices - Simulated Code Engine Deployment</title>
+</head>
+<body>
+  <h1>Microservices - Simulated Code Engine Deployment</h1>
+
+  <h2>Author Info:</h2>
+  <pre id="author">Loading...</pre>
+
+  <h2>Book Info:</h2>
+  <pre id="book">Loading...</pre>
+
+  <script>
+    fetch("http://localhost:5000/author")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("author").textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById("author").textContent = "Failed to fetch author service.";
+      });
+
+    fetch("http://localhost:5001/book")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("book").textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(err => {
+        document.getElementById("book").textContent = "Failed to fetch book service.";
+      });
+  </script>
+</body>
+</html>
