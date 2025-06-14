@@ -1,6 +1,6 @@
 # Microservices Code Engine Simulation
 
-This project simulates deployment of microservices locally instead of IBM Cloud Code Engine.
+This project shows the deployment of microservices.
 
 ## Microservices Included
 
